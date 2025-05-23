@@ -17,25 +17,6 @@ Permite criar, listar, atualizar e deletar tarefas com informações como nome, 
 
 ---
 
-## 🧱 Estrutura do Projeto
-
-tarefasapi/
-├── src/
-│ ├── main/
-│ │ ├── java/
-│ │ │ └── com.lucasmafra.tarefasapi/
-│ │ │ ├── controller/
-│ │ │ ├── model/
-│ │ │ ├── repository/
-│ │ │ └── service/
-│ │ └── resources/
-│ │ └── application.properties
-├── pom.xml
-└── README.md
-
-
----
-
 🧑‍💻 Autor
 
 Desenvolvido por Lucas de Lima Mafra
