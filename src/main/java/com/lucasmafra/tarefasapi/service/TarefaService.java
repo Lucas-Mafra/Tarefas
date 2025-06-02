@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -23,6 +24,8 @@ public class TarefaService {
         if(tarefa.getNome() == null || tarefa.getNome().isEmpty()) {
             throw new IllegalArgumentException("O nome da tarefa não pode ser vazio.");
         }
+
+        tarefa.setDataCriacao(LocalDate.now());
         return tarefaRepository.save(tarefa);
     }
 
@@ -39,6 +42,7 @@ public class TarefaService {
                 tarefa -> {
                     tarefa.setNome(novaTarefa.getNome());
                     tarefa.setDescricao(novaTarefa.getDescricao());
+                    tarefa.setDataCriacao(novaTarefa.getDataCriacao());
                     tarefa.setPrazo(novaTarefa.getPrazo());
                     tarefa.setStatus(novaTarefa.getStatus());
                     tarefa.setPrioridade(novaTarefa.getPrioridade());

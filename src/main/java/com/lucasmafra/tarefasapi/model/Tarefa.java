@@ -30,7 +30,7 @@ public class Tarefa {
     @Size(max = 500, message = "A descrição da tarefa deve ter no máximo 500 caracteres.")
     private String descricao;
 
-    private LocalDate dataCriacao = LocalDate.now();
+    private LocalDate dataCriacao;
 
     @Future(message = "O prazo deve ser uma data futura.")
     private LocalDate prazo;
@@ -41,6 +41,17 @@ public class Tarefa {
     @NotNull(message = "O status da tarefa não pode ser nulo.")
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    public Tarefa(long id, String nome, String descricao, LocalDate dataCriacao, LocalDate prazo, Prioridade prioridade, Status status) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.dataCriacao = dataCriacao;
+        this.prazo = prazo;
+        this.prioridade = prioridade;
+        this.status = status;
+    }
+
 
     @Override
     public String toString() {
